@@ -7,7 +7,6 @@ def get_server_ip():
     ip = askstring("IP Address", "Enter the server IP address:")
     if ip:
         return ip
-    else:
         exit()
 
 server_ip = get_server_ip()
