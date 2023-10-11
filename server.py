@@ -8,6 +8,7 @@ import threading
 class ImageServerApp:
     def __init__(self):
         self.root = Tk()
+
         self.root.title("Image Viewer")
         self.current_image_index = 0
         self.image_paths = [f"Images\\{i}.jpg" for i in range(1, 12)]

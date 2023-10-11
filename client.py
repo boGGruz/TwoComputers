@@ -14,6 +14,7 @@ server_ip = get_server_ip()
 def click_button():
     if server_ip:
         server_port = 3000
+
         client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         client_socket.connect((server_ip, server_port))
 
