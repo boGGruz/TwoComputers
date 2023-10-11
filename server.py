@@ -16,7 +16,14 @@ class ImageServerApp:
         self.label = Label(self.root, image=self.photo)
         self.label.pack()
         self.server_thread = threading.Thread(target=self.run_server)
+        self.server_thread.daemon = True
         self.server_thread.start()
+
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
+
+    def on_closing(self):
+        self.root.quit()
+        sys.exit()
 
     def change_image(self):
         self.current_image_index += 1
